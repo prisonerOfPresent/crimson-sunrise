@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,20 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'the-red-abode';
+export class AppComponent implements OnInit {
+  title = 'The Crimson Sunrise';
+  currentPath = '';
+
+  constructor(private router: Router) {
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd && !event.url.includes('home')) {
+        this.currentPath = event.url.replace('/','');
+      } else {
+        this.currentPath = '';
+      }
+    })
+  }
 }
