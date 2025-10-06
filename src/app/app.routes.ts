@@ -6,16 +6,13 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    pathMatch: 'full'
   },
   {
     path: 'home',
     component: HomeComponent,
-    pathMatch: 'full'
   },
   {
     path: 'resume',
     component: ResumeComponent,
-    pathMatch: 'full'
   }
 ];
