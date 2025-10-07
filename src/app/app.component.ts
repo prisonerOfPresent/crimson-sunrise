@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router, RouterLink, RouterOutlet} from '@angular/router';
+import {ThemeSwitcherService} from './services/theme-switcher-service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'The Crimson Sunrise';
   currentPath = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private themeService: ThemeSwitcherService) {
   }
 
   ngOnInit(): void {
@@ -22,5 +23,9 @@ export class AppComponent implements OnInit {
         this.currentPath = '';
       }
     })
+  }
+
+  toggleTheme() {
+    this.themeService.switchTheme();
   }
 }

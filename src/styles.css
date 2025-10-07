@@ -1,21 +1,6 @@
 /* Inconsolata font */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
 
-:root {
-  --primary-color : #f5eded;
-  --primary-accent-color: #ed4062;
-  /*--primary-accent-color: #dc143c;*/
-  --secondary-accent-color: #fdb7b3;
-  --complementary-accent-color: #14dcb4;
-  --primary-bg-color: #181818;
-  --secondary-bg-color: #282828;
-  --greenish-cyan : #00adb5;
-  --primary-font-size: 1.3rem;
-  --small-font-size: 0.4rem;
-  --medium-font-size: 1rem;
-}
-
-
 html{
   font-family: 'Inconsolata', monospace;
   background-color: var(--primary-bg-color);
@@ -253,4 +238,31 @@ img {
 
 .padding-5px{
   padding: 5px;
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+select {
+  padding: 2px;
+  margin: 2px;
+  background: var(--primary-bg-color);
+  color: var(--primary-color);
+  border-radius: 1rem;
+  font-family: inherit;
+}
+
+select > option {
+  color: var(--primary-color);
+  font-family: inherit;
+}
+
+button {
+  padding: 10px;
+  background: var(--primary-bg-color);
+  color: var(--primary-accent-color);
+  border-radius: 1rem;
+  font-family: inherit;
 }
