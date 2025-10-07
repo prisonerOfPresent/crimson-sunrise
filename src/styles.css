@@ -11,7 +11,7 @@
   --secondary-bg-color: #282828;
   --greenish-cyan : #00adb5;
   --primary-font-size: 1.3rem;
-  --small-font-size: 0.6rem;
+  --small-font-size: 0.4rem;
   --medium-font-size: 1rem;
 }
 
@@ -238,4 +238,19 @@ img {
 
 .marg-bottom-5 {
   margin-bottom: 5px;
+}
+
+.primary-underlined {
+  color: var(--primary-color);
+  text-decoration: underline double 0.01rem var(--secondary-accent-color);
+  text-underline-offset: 0.3rem;
+  cursor: pointer;
+}
+
+.primary-color-border {
+  border: 1px solid var(--primary-color);
+}
+
+.padding-5px{
+  padding: 5px;
 }
