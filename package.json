@@ -7,8 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:prod": "ng build --configuration=production --base-href=\"https://prisonerofpresent.github.io/crimson-sunrise/\" --output-path=dist/crimson-sunrise",
-    "deploy": "npm run build:prod && angular-cli-ghpages --dir dist/crimson-sunrise/browser"
+    "build:prod": "ng build --configuration=production",
+    "build:prod:ghpages": "ng build --configuration=production --base-href=\"https://prisonerofpresent.github.io/crimson-sunrise/\" --output-path=dist/crimson-sunrise",
+    "deploy:ghpages": "npm run build:prod:ghpages && angular-cli-ghpages --dir dist/crimson-sunrise/browser"
   },
   "private": true,
   "dependencies": {
