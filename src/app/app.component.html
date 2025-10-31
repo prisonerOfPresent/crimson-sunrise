@@ -5,9 +5,14 @@
         <rect x="0" y="0" width="40" height="40" fill="var(--primary-accent-color)"></rect>
       </svg>
       <h1 class="extra-light-font"><a class="faux-link" href="/">/</a>{{ currentPath }}</h1>
+      <button class="flex-place-end flex-row items-center" (click)="toggleTheme()">
+        <span class="marg-5px">
+          <img src="{{getThemeIcon()}}" class="button-icon" alt="Theme icon">
+        </span>
+        {{ getThemeButtonLabel() }}
+      </button>
     </div>
     <div class="flex-row-reverse regular-font no-margin no-padding">
-      <button (click)="toggleTheme()">Toggle Theme</button>
     </div>
     <div>
       <nav class="medium-font">
@@ -17,9 +22,9 @@
         <a class="marg-5px" routerLink="resume"> CV / Resume </a>
         <a class="marg-5px" routerLink="about"> About </a>
 
-<!--        <a class="marg-5px" href="home"> Hot Takes </a>-->
+        <!--        <a class="marg-5px" href="home"> Hot Takes </a>-->
 
-<!--        <a class="marg-5px" href="home"> Ramblings </a>-->
+        <!--        <a class="marg-5px" href="home"> Ramblings </a>-->
 
       </nav>
     </div>

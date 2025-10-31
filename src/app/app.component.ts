@@ -6,6 +6,7 @@ import {ThemeSwitcherService} from './services/theme-switcher-service';
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
@@ -27,5 +28,21 @@ export class AppComponent implements OnInit {
 
   toggleTheme() {
     this.themeService.switchTheme();
+  }
+
+  getThemeButtonLabel() {
+    const currentTheme = this.themeService.getCurrentTheme();
+    if (currentTheme === 'dark') {
+      return 'Light Mode'
+    }
+    return 'Dark Mode';
+  }
+
+  getThemeIcon(): string {
+    const currentTheme = this.themeService.getCurrentTheme();
+    if (currentTheme === 'dark') {
+      return 'light-mode.png'
+    }
+    return 'dark-mode.png';
   }
 }

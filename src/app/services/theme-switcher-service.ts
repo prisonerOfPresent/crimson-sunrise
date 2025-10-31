@@ -16,4 +16,12 @@ export class ThemeSwitcherService {
       themeLink.href = (themeLink.href.includes('dark') ? 'light' : 'dark') + '.css';
     }
   }
+
+  getCurrentTheme() {
+    let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+    if (themeLink.href.includes('dark')) {
+      return 'dark';
+    }
+    return 'light';
+  }
 }

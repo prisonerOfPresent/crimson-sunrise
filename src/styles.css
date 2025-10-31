@@ -266,3 +266,20 @@ button {
   border-radius: 1rem;
   font-family: inherit;
 }
+
+
+.flex-place-end {
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+.button-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.content-center {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
