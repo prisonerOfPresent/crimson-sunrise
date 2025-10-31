@@ -1,0 +1,11 @@
+.fortress-logo {
+  width: 270px;
+  height: 200px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px;
+}
