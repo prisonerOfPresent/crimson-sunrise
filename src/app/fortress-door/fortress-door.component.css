@@ -1,9 +1,23 @@
 .fortress-logo {
   width: 270px;
   height: 200px;
+  animation: glow 7s infinite;
+  backdrop-filter: blur(50px) saturate(3);
 }
 
-.input-group {
+@keyframes glow {
+  80% {
+    -webkit-filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+    filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+  }
+}
+
+
+.fortress-logo-container {
+  background-repeat: no-repeat;
+}
+
+.input-group-centered {
   display: flex;
   flex-direction: column;
   align-items: center;

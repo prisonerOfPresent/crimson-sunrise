@@ -1,0 +1,19 @@
+.fortress-actions {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  @media (width < 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.fortress-action-item {
+  border: 1px solid var(--primary-color);
+  min-width: 250px;
+  @media (width < 250px) {
+    width: auto;
+    min-width: auto;
+  }
+}

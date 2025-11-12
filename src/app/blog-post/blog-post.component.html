@@ -1,0 +1,32 @@
+<div class="flex-column marg-5px">
+  <a [routerLink]="'/fortress'"><-- Back to Fortress</a>
+  <div class="flex-row">
+    <h1 class="light-font">New Blog Post</h1>
+  </div>
+
+  <div id="blog-post-editor">
+    <form class="form marg-5px">
+      <div class="input-group marg-5px">
+        <label for="title">Title</label>
+        <input type="text" id="title">
+      </div>
+
+      <div class="input-group marg-5px">
+        <label for="tagline">Tagline</label>
+        <input type="text" id="tagline">
+      </div>
+
+      <div class="input-group marg-5px">
+        <label for="tag-editor">Tags</label>
+        <p>Placeholder for tag editor. I should be able to enter tags in below textbox and they should be added to the container in place of this paragraph. I should be able to remove them from the container by clicking a remove (x) button on the tag.</p>
+        <input type="text" id="tag-editor" placeholder="Enter tag">
+      </div>
+
+      <div class="input-group marg-5px">
+        <label for="post-content">Content</label>
+        <textarea placeholder="Your content here" id="post-content"></textarea>
+      </div>
+
+    </form>
+  </div>
+</div>

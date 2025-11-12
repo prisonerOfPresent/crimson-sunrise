@@ -4,6 +4,8 @@ import {ResumeComponent} from './resume/resume.component';
 import {AboutComponent} from './about/about.component';
 import {FortressDoorComponent} from './fortress-door/fortress-door.component';
 import {FortressComponent} from './fortress/fortress.component';
+import {HotTakeComponent} from './hot-take/hot-take.component';
+import {BlogPostComponent} from './blog-post/blog-post.component';
 
 export const routes: Routes = [
   {
@@ -29,5 +31,13 @@ export const routes: Routes = [
   {
     path: 'fortress',
     component: FortressComponent
+  },
+  {
+    path: 'hot-take',
+    component: HotTakeComponent
+  },
+  {
+    path: 'blog-post',
+    component: BlogPostComponent
   }
 ];

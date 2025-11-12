@@ -26,6 +26,6 @@ export class FortressDoorComponent {
     this.showDoor = !this.showDoor;
     setTimeout(() => {
       this.router.navigateByUrl('/fortress');
-    }, 1000);
+    }, 5000);
   }
 }

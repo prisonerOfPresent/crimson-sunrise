@@ -261,12 +261,30 @@ select > option {
   font-family: inherit;
 }
 
-button {
+button, input[type=submit] {
   padding: 10px;
   background: var(--primary-bg-color);
   color: var(--primary-accent-color);
   border-radius: 1rem;
   font-family: inherit;
+}
+
+input[type=text], input[type=password]  {
+  padding: 10px;
+  background: var(--secondary-bg-color);
+  color: var(--primary-accent-color);
+  border-radius: 1rem;
+  font-family: inherit;
+  font-size: var(--medium-font-size);
+}
+
+textarea  {
+  padding: 8px;
+  background: var(--secondary-bg-color);
+  color: var(--primary-accent-color);
+  border-radius: 1rem;
+  font-family: inherit;
+  font-size: var(--medium-font-size);
 }
 
 
@@ -291,4 +309,27 @@ button {
   display: flex;
   flex-direction: column;
   padding: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.max-width-80 {
+  max-width: 80%;
+}
+
+.min-width-100-px {
+  min-width: 100px;
+}
+
+.medium-font {
+  font-size: var(--medium-font-size) !important;
 }

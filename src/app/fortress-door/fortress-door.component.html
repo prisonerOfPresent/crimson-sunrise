@@ -1,20 +1,20 @@
 <div class="items-center flex-column light-font">
   <div class="content-center items-center">
-    <h1 class="light-font">Fortress is {{lockStatusText}}</h1>
-    <div class="centered-image-container">
+    <div class="centered-image-container fortress-logo-container"
+         [ngStyle]="{'background-image': `url(`+ lockStatusText === 'Locked' ? 'superman-logo-black.png' : 'superman-logo-color.png' +`)`}" >
       <img (click)="showDoor = !showDoor" [src]="lockStatusText === 'Locked' ? 'superman-logo-black.png' : 'superman-logo-color.png'" class="fortress-logo" alt="Blacked out fortress logo">
     </div>
     <div [ngStyle]="{ 'display': !showDoor ? 'none' : 'block' }">
       <form class="form" (ngSubmit)="unlockFortress($event)">
-        <div class="input-group">
+        <div class="input-group-centered">
           <label for="username">Username</label>
           <input type="text" id="username" class="marg-top-5"/>
         </div>
-        <div class="input-group marg-top-5">
+        <div class="input-group-centered marg-top-5">
           <label for="username">Password</label>
           <input type="password" id="username" class="marg-top-5"/>
         </div>
-        <div class="input-group marg-top-5">
+        <div class="input-group-centered marg-top-5">
           <button>Unlock</button>
         </div>
       </form>
