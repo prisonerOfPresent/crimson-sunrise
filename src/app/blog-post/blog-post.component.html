@@ -5,26 +5,44 @@
   </div>
 
   <div id="blog-post-editor">
-    <form class="form marg-5px">
+    <form class="form marg-5px" (ngSubmit)="handleSubmit($event)">
       <div class="input-group marg-5px">
-        <label for="title">Title</label>
+        <label for="title" class="marg-5px">Title</label>
         <input type="text" id="title">
       </div>
 
       <div class="input-group marg-5px">
-        <label for="tagline">Tagline</label>
+        <label for="tagline" class="marg-5px">Tagline</label>
         <input type="text" id="tagline">
       </div>
 
       <div class="input-group marg-5px">
-        <label for="tag-editor">Tags</label>
-        <p>Placeholder for tag editor. I should be able to enter tags in below textbox and they should be added to the container in place of this paragraph. I should be able to remove them from the container by clicking a remove (x) button on the tag.</p>
-        <input type="text" id="tag-editor" placeholder="Enter tag">
+        <label for="tag_editor" class="marg-5px">Tags</label>
+        <div class="marg-5px flex-row">
+          @for (tag of tags; track tag) {
+            <div class="tag flex-row text-center">
+              <small class="light-font">{{tag}}</small>
+              <span class="text-center content-center items-center"><img src="delete-icon.png" class="button-icon"
+                         alt="Delete icon" (click)="tags.splice(tags.indexOf(tag),1)"/> </span>
+            </div>
+          }
+        </div>
+        <input type="text" #tag_editor placeholder="Enter tag" (keydown)="handleTagInsert($event)" class="marg-5px" >
       </div>
 
       <div class="input-group marg-5px">
-        <label for="post-content">Content</label>
-        <textarea placeholder="Your content here" id="post-content"></textarea>
+        <label for="post-content" class="marg-5px">Content</label>
+        <quill-editor [(ngModel)]="editorContent"
+                      id="post-content"
+                      name="post-content"
+                      [styles]="{'min-height': '200px'}"
+                      [placeholder]="'Start typing here...'"
+                      [modules]="quillConfig">
+        </quill-editor>
+      </div>
+
+      <div class="content-center marg-5px">
+        <input type="submit" value="Post" class="min-width-100-px medium-font">
       </div>
 
     </form>

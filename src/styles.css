@@ -1,5 +1,8 @@
+@import '../node_modules/quill/dist/quill.snow.css';
+
 /* Inconsolata font */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+
 
 html{
   font-family: 'Inconsolata', monospace;
@@ -332,4 +335,26 @@ textarea  {
 
 .medium-font {
   font-size: var(--medium-font-size) !important;
+}
+
+[quill-editor-toolbar] .ql-font span[data-label="Inconsolata"]::before {
+  font-family: "Inconsolata", monospace;
+}
+
+.ql-font-Inconsolata {
+  font-family: "Inconsolata", monospace;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=Inconsolata]::before, .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=Inconsolata]::before {
+  content: 'Inconsolata';
+}
+
+.tag {
+  border: 1px solid var(--primary-accent-color);
+  border-radius: 1rem;
+  padding: 5px;
+  margin: 5px;
+  place-items: center;
+  max-width: 100px;
+  text-wrap: auto;
 }
