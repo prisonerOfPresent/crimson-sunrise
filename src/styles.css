@@ -358,3 +358,12 @@ textarea  {
   max-width: 100px;
   text-wrap: auto;
 }
+
+.error-banner {
+  background-color: var(--primary-accent-color);
+  color: var(--primary-color)
+}
+
+.disabled-link {
+  pointer-events: none;
+}

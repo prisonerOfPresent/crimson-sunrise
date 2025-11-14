@@ -1,0 +1,28 @@
+<h1 class="extra-light-font">My Hot Takes</h1>
+
+@if (hotTakes && hotTakes.length > 0) {
+  <ul>
+    @for (take of hotTakes; track take.id) {
+      <li class="marg-10px">
+        <div class="flex-row items-center">
+          <a class="disabled-link">
+            {{ take.title }}
+          </a>
+          @if (loggedIn) {
+            <button (click)="deleteHotTake(take.id)" class="marg-10px flex-row items-center">
+             <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
+              Delete
+            </button>
+          }
+        </div>
+        @if (take.details.length > 0) {
+          <ul class="marg-10px">
+            <li>{{ take.details }}</li>
+          </ul>
+        }
+      </li>
+    }
+  </ul>
+} @else {
+  <p>Nothing here :(. Come back again later!</p>
+}

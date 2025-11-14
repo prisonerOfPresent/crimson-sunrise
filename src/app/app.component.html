@@ -5,6 +5,11 @@
         <rect x="0" y="0" width="40" height="40" fill="var(--primary-accent-color)"></rect>
       </svg>
       <h1 class="extra-light-font"><a class="faux-link" href="/">/</a>{{ currentPath }}</h1>
+      @if (loggedIn) {
+        <button class="flex-row items-center" (click)="logout()">
+          Exit fortress
+        </button>
+      }
       <button class="flex-place-end flex-row items-center" (click)="toggleTheme()">
         <span class="marg-5px">
           <img src="{{getThemeIcon()}}" class="button-icon" alt="Theme icon">
@@ -22,8 +27,11 @@
         <a class="marg-5px" routerLink="resume"> CV / Resume </a>
         <a class="marg-5px" routerLink="about"> About </a>
 
-        <!--        <a class="marg-5px" href="home"> Hot Takes </a>-->
+        <a class="marg-5px" routerLink="hot-takes"> Hot Takes </a>
 
+        @if (loggedIn) {
+          <a class="marg-5px" routerLink="fortress">Fortress of Solitude</a>
+        }
         <!--        <a class="marg-5px" href="home"> Ramblings </a>-->
 
       </nav>

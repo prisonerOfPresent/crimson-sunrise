@@ -4,6 +4,7 @@ import {provideRouter} from '@angular/router';
 import {routes} from './app.routes';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {provideQuillConfig} from 'ngx-quill';
+import {provideHttpClient} from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({eventCoalescing: true}), provideRouter(routes),
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
         import: 'formats/font',
         whitelist: ['Inconsolata', 'monospace']
       }]
-    })
+    }),
+    provideHttpClient()
   ]
 };
