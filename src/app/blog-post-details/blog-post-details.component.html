@@ -1,0 +1,28 @@
+<div class="flex-row marg-5px">
+  <a routerLink="/blog-posts"><---- Back to list</a>
+</div>
+@if (post) {
+  <div class="marg-10px">
+    <div class="flex-row items-center">
+      <h2 class="light-font no-padding">
+        {{ post.title }}
+      </h2>
+    </div>
+    @if (post.tagline.length > 0) {
+      <div class="flex-row items-center">
+        <h3 class="marg-top-5 extra-light-font">
+          {{ post.tagline }}
+        </h3>
+      </div>
+    }
+    <h5 class="extra-light-font">Originally Posted at : {{post.created_at}}</h5>
+    @if(post.created_at !== post.updated_at) {
+      <h5 class="extra-light-font">Updated at : {{post.updated_at}}</h5>
+    }
+  </div>
+  <article class="marg-10px accomplishment secondary-bg padding-5px">
+    <div style="overflow-wrap: break-word;" [innerHTML]="post.content"></div>
+  </article>
+} @else {
+  <p>Nothing here :(. Come back again later!</p>
+}

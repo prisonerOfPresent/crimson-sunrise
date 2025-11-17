@@ -326,7 +326,7 @@ textarea  {
 }
 
 .max-width-80 {
-  max-width: 80%;
+  max-width: 80% !important;
 }
 
 .min-width-100-px {

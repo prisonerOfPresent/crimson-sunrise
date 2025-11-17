@@ -1,0 +1,30 @@
+<h1 class="extra-light-font">My Posts</h1>
+<h5>Sometimes I may need to vent and ramble on for quite a while. So I thought I could pen these down and visit these
+  later, just to sit on these trains of thoughts.</h5>
+
+@if (posts && posts.length > 0) {
+  @for (post of posts; track post.id) {
+    <h4 class="marg-10px">
+      <div class="flex-row items-center">
+        <a [routerLink]="'/blog-posts/'+post.id">
+          {{ post.title }}
+        </a>
+      </div>
+      @if (post.tagline.length > 0) {
+        <div class="flex-row items-center">
+          <h5 class="marg-top-5">
+            {{ post.tagline }}
+          </h5>
+          @if (loggedIn) {
+            <button (click)="deletePost(post.id)" class="marg-10px flex-row items-center">
+              <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
+              Delete
+            </button>
+          }
+        </div>
+      }
+    </h4>
+  }
+} @else {
+  <p>Nothing here :(. Come back again later!</p>
+}

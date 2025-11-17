@@ -7,6 +7,8 @@ import {FortressComponent} from './fortress/fortress.component';
 import {HotTakeComponent} from './hot-take/hot-take.component';
 import {BlogPostComponent} from './blog-post/blog-post.component';
 import {HotTakesComponent} from './hot-takes/hot-takes.component';
+import {BlogPostsComponent} from './blog-posts/blog-posts.component';
+import {BlogPostDetailsComponent} from './blog-post-details/blog-post-details.component';
 
 export const routes: Routes = [
   {
@@ -44,5 +46,13 @@ export const routes: Routes = [
   {
     path: 'hot-takes',
     component: HotTakesComponent
+  },
+  {
+    path: 'blog-posts',
+    component: BlogPostsComponent
+  },
+  {
+    path: 'blog-posts/:id',
+    component: BlogPostDetailsComponent
   }
 ];
