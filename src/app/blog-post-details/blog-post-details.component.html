@@ -15,9 +15,17 @@
         </h3>
       </div>
     }
-    <h5 class="extra-light-font">Originally Posted at : {{post.created_at}}</h5>
-    @if(post.created_at !== post.updated_at) {
-      <h5 class="extra-light-font">Updated at : {{post.updated_at}}</h5>
+    @if (post.tags) {
+      <div class="flex-row items-center">
+        <p>Tags:</p>
+        @for (tag of post.tags.split(","); track tag) {
+          <span class="tag marg-5px">{{ tag }}</span>
+        }
+      </div>
+    }
+    <h5 class="extra-light-font">Originally Posted at : {{ post.created_at }}</h5>
+    @if (post.created_at !== post.updated_at) {
+      <h5 class="extra-light-font">Updated at : {{ post.updated_at }}</h5>
     }
   </div>
   <article class="marg-10px accomplishment secondary-bg padding-5px">

@@ -367,3 +367,7 @@ textarea  {
 .disabled-link {
   pointer-events: none;
 }
+
+.place-center {
+  align-items: center;
+}
