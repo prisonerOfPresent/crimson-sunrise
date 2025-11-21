@@ -356,7 +356,17 @@ textarea  {
   margin: 5px;
   place-items: center;
   max-width: 100px;
+  min-width: 80px;
   text-wrap: auto;
+}
+
+.tag-btn {
+  border-radius: 1rem;
+  padding: 5px;
+  margin: 5px;
+  place-items: center;
+  min-width: 80px;
+  max-height: 40px;
 }
 
 .error-banner {

@@ -19,12 +19,16 @@
       <div class="flex-row items-center">
         <p>Tags:</p>
         @for (tag of post.tags.split(","); track tag) {
-          <span class="tag marg-5px">{{ tag }}</span>
+          <span class="tag marg-5px">
+              <span class="marg-5px text-center flex-row items-center">{{ tag }}</span>
+            </span>
         }
       </div>
     }
+    @if(post.created_at === post.updated_at) {
     <h5 class="extra-light-font">Originally Posted at : {{ post.created_at }}</h5>
-    @if (post.created_at !== post.updated_at) {
+    }
+    @else {
       <h5 class="extra-light-font">Updated at : {{ post.updated_at }}</h5>
     }
   </div>

@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from '../services/local-storage-service';
 import {firstValueFrom} from 'rxjs';
 import {environment} from '../../environments/environment';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-blog-posts',
@@ -17,7 +17,8 @@ export class BlogPostsComponent {
   posts: any[] = [];
   loggedIn = false;
 
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService,
+              private router: Router) {
     this.loggedIn = this.localStorageService.getToken() !== null;
     this.loadBlogPosts();
   }
@@ -48,5 +49,9 @@ export class BlogPostsComponent {
     } catch (err) {
       console.error(err);
     }
+  }
+
+  editPost(id: any) {
+    this.router.navigateByUrl(`/blog-post?id=${id}`);
   }
 }
