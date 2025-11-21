@@ -355,9 +355,14 @@ textarea  {
   padding: 5px;
   margin: 5px;
   place-items: center;
-  max-width: 100px;
-  min-width: 80px;
+  max-width: 80px;
+  min-width: 40px;
   text-wrap: auto;
+  min-height: 30px;
+  max-height: 30px;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: row;
 }
 
 .tag-btn {
@@ -380,4 +385,18 @@ textarea  {
 
 .place-center {
   align-items: center;
+}
+
+.blog-post-row-container {
+  display: flex;
+  flex-direction: row;
+  @media (width > 599 px) {
+    align-items: center;
+  }
+  @media (width < 600px) {
+    display: inline-flex;
+    flex-direction: row;
+    overflow: auto;
+    max-width: 80%;
+  }
 }

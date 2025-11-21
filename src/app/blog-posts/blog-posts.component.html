@@ -10,19 +10,19 @@
           {{ post.title }}
         </a>
       </div>
-      <div class="flex-row items-center place-center">
+      <div class="blog-post-row-container">
         @if (post.tagline.length > 0) {
-          <h5 class="text-center marg-5px">
+          <h6 class="text-center marg-5px">
             {{ post.tagline }}
-          </h5>
+          </h6>
         }
-        @if (post.tags) {
-          @for (tag of post.tags.split(","); track tag) {
-            <span class="tag marg-5px">
-              <span class="marg-5px text-center flex-row items-center">{{ tag }}</span>
-            </span>
-          }
-        }
+<!--        @if (post.tags) {-->
+<!--          @for (tag of post.tags.split(","); track tag) {-->
+<!--            <span class="tag marg-5px">-->
+<!--              <span class="marg-5px text-center flex-row items-center small-font">{{ tag }}</span>-->
+<!--            </span>-->
+<!--          }-->
+<!--        }-->
         @if (loggedIn) {
           <button (click)="deletePost(post.id)" class="marg-10px flex-row items-center tag-btn">
             <span class="marg-5px">Delete</span>

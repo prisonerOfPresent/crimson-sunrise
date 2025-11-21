@@ -16,11 +16,11 @@
       </div>
     }
     @if (post.tags) {
-      <div class="flex-row items-center">
+      <div class="blog-post-row-container items-center">
         <p>Tags:</p>
         @for (tag of post.tags.split(","); track tag) {
           <span class="tag marg-5px">
-              <span class="marg-5px text-center flex-row items-center">{{ tag }}</span>
+              <span class="marg-5px text-center flex-row items-center small-font">{{ tag }}</span>
             </span>
         }
       </div>
