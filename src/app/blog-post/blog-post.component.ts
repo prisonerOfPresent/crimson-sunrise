@@ -106,7 +106,7 @@ export class BlogPostComponent implements OnInit {
     }
     try {
       let response: any = undefined;
-      if(this.postID === 0) {
+      if(!this.postID || this.postID === 0) {
         response = await firstValueFrom(this.http.post(`${environment.apiBaseUrl}/prerise/posts`, requestBody, {
           headers: {
             'Authorization': `Bearer ${this.localStorageService.getToken()}`
