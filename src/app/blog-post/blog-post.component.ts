@@ -26,6 +26,7 @@ export class BlogPostComponent implements OnInit {
   tags:string[] = [];
 
   postID = 0;
+  createdDate = 0;
 
   titleControl = new FormControl('', [Validators.required]);
   tagLineControl = new FormControl('', [Validators.required]);
@@ -80,6 +81,7 @@ export class BlogPostComponent implements OnInit {
           this.titleControl.setValue(response.title);
           this.tagLineControl.setValue(response.tagline);
           this.tags = response.tags.split(',');
+          this.createdDate = response.CreatedAtUnix;
         } catch (err) {
           console.error(err);
         }
@@ -102,7 +104,8 @@ export class BlogPostComponent implements OnInit {
       title: this.titleControl.value,
       tagLine: this.tagLineControl.value,
       content: this.contentControl.value?.replaceAll("&nbsp;"," "),
-      tags: this.tags.join(',')
+      tags: this.tags.join(','),
+      CreatedAtUnix: this.createdDate && this.createdDate > 0 ? this.createdDate : 0
     }
     try {
       let response: any = undefined;
