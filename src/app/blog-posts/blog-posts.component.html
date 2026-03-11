@@ -4,7 +4,7 @@
 
 @if (posts && posts.length > 0) {
   @for (post of posts; track post.id) {
-    <h4 class="marg-10px light-font">
+    <h3 class="marg-10px light-font">
       <div class="flex-row items-center">
         <a [routerLink]="'/blog-posts/'+post.id">
           {{ post.title }}
@@ -12,9 +12,9 @@
       </div>
       <div class="blog-post-row-container marg-top-5">
         @if (post.tagline.length > 0) {
-          <h5 class="text-center marg-5px light-font">
+          <h4 class="text-center marg-5px light-font">
             {{ post.tagline }}
-          </h5>
+          </h4>
         }
 <!--        @if (post.tags) {-->
 <!--          @for (tag of post.tags.split(","); track tag) {-->
@@ -35,7 +35,7 @@
           </button>
         }
       </div>
-    </h4>
+    </h3>
   }
 } @else {
   <p class="extra-light-font">Nothing here :(. Come back again later!</p>
