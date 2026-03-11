@@ -5,9 +5,9 @@
     @for (take of hotTakes; track take.id) {
       <li class="marg-10px extra-light-font">
         <div class="flex-row items-center">
-          <a class="disabled-link">
+          <h4 class="disabled-link">
             {{ take.title }}
-          </a>
+          </h4>
           @if (loggedIn) {
             <button (click)="deleteHotTake(take.id)" class="marg-10px flex-row items-center">
              <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
@@ -17,7 +17,7 @@
         </div>
         @if (take.details.length > 0) {
           <ul class="marg-10px">
-            <li class="extra-light-font">{{ take.details }}</li>
+            <li class="extra-light-font"><h5>{{ take.details }}</h5></li>
           </ul>
         }
       </li>
