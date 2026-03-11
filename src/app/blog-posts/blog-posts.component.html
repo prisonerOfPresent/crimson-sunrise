@@ -1,42 +1,46 @@
-<h1 class="light-font">My Posts</h1>
-<h5 class="extra-light-font">Sometimes I may need to vent and ramble on for quite a while. So I thought I could pen these down and visit these
-  later, just to sit on these trains of thoughts.</h5>
+<div class="flex-column marg-5px">
+  <h1 class="light-font">My Writings</h1>
+  <h4 class="light-font">Sometimes I may need to vent and ramble on for quite a while. So I thought I could pen
+    these down and visit these
+    later.</h4>
 
-@if (posts && posts.length > 0) {
-  @for (post of posts; track post.id) {
-    <h3 class="marg-10px light-font">
-      <div class="flex-row items-center">
-        <a [routerLink]="'/blog-posts/'+post.id">
-          {{ post.title }}
-        </a>
-      </div>
-      <div class="blog-post-row-container marg-top-5">
-        @if (post.tagline.length > 0) {
-          <h4 class="text-center marg-5px light-font">
-            {{ post.tagline }}
-          </h4>
-        }
-<!--        @if (post.tags) {-->
-<!--          @for (tag of post.tags.split(","); track tag) {-->
-<!--            <span class="tag marg-5px">-->
-<!--              <span class="marg-5px text-center flex-row items-center small-font">{{ tag }}</span>-->
-<!--            </span>-->
-<!--          }-->
-<!--        }-->
-        @if (loggedIn) {
-          <button (click)="editPost(post.id)" class="marg-10px flex-row items-center tag-btn">
-            <span class="marg-5px">Edit</span>
-            <img src="edit-icon.png" class="button-icon marg-5px" alt="Edit icon"/>
-          </button>
-          <span>&nbsp;&nbsp;</span>
-          <button (click)="deletePost(post.id)" class="marg-10px flex-row items-center tag-btn">
-            <span class="marg-5px">Delete</span>
-            <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
-          </button>
-        }
-      </div>
-    </h3>
+  @if (posts && posts.length > 0) {
+    @for (post of posts; track post.id) {
+      <h4 class="marg-10px light-font">
+        <div class="flex-row items-center">
+          <a [routerLink]="'/blog-posts/'+post.id">
+            {{ post.title }}
+          </a>
+        </div>
+        <div class="blog-post-row-container marg-top-5">
+          @if (post.tagline.length > 0) {
+            <h5 class="text-center marg-5px light-font">
+              {{ post.tagline }}
+            </h5>
+          }
+          <!--        @if (post.tags) {-->
+          <!--          @for (tag of post.tags.split(","); track tag) {-->
+          <!--            <span class="tag marg-5px">-->
+          <!--              <span class="marg-5px text-center flex-row items-center small-font">{{ tag }}</span>-->
+          <!--            </span>-->
+          <!--          }-->
+          <!--        }-->
+          @if (loggedIn) {
+            <button (click)="editPost(post.id)" class="marg-10px flex-row items-center tag-btn">
+              <span class="marg-5px">Edit</span>
+              <img src="edit-icon.png" class="button-icon marg-5px" alt="Edit icon"/>
+            </button>
+            <span>&nbsp;&nbsp;</span>
+            <button (click)="deletePost(post.id)" class="marg-10px flex-row items-center tag-btn">
+              <span class="marg-5px">Delete</span>
+              <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
+            </button>
+          }
+        </div>
+      </h4>
+    }
+  } @else {
+    <p class="light-font">Nothing here :(. Come back again later!</p>
   }
-} @else {
-  <p class="extra-light-font">Nothing here :(. Come back again later!</p>
-}
+
+</div>

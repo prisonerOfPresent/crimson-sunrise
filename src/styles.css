@@ -81,10 +81,10 @@ nav {
   margin: 2px;
   padding: 2px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   place-content: baseline;
-  @media (width > 600px) {
-    flex-direction: row;
+  @media (width < 600px) {
+    display: inline-flex;
   }
 }
 
@@ -355,11 +355,11 @@ textarea  {
   padding: 5px;
   margin: 5px;
   place-items: center;
-  max-width: 80px;
+  max-width: 100px;
   min-width: 40px;
   text-wrap: auto;
   min-height: 30px;
-  max-height: 30px;
+  max-height: 50px;
   text-align: center;
   display: inline-flex;
   flex-direction: row;

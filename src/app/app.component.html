@@ -1,6 +1,6 @@
 <div class="flex-column">
   <div class="flex-column sticky-top">
-    <div class="flex-row items-center">
+    <div class="flex-row items-center marg-5px">
       <svg width="50" height="50">
         <rect x="0" y="0" width="40" height="40" fill="var(--primary-accent-color)"></rect>
       </svg>
@@ -17,23 +17,25 @@
         {{ getThemeButtonLabel() }}
       </button>
     </div>
-    <div class="flex-row-reverse regular-font no-margin no-padding">
-    </div>
-    <div>
+    <div class="no-margin-no-padding">
       <nav class="medium-font">
 
         <a class="marg-5px" routerLink="home"> Home </a>
-        <a class="marg-5px" routerLink="resume"> CV / Resume </a>
         <a class="marg-5px" routerLink="about"> About </a>
+        <a class="marg-5px" routerLink="resume"> CV / Resume </a>
         <a class="marg-5px" routerLink="hot-takes"> Hot Takes </a>
-        <a class="marg-5px" routerLink="blog-posts"> Ramblings </a>
+        <a class="marg-5px" routerLink="blog-posts"> Writings </a>
         @if (loggedIn) {
           <a class="marg-5px" routerLink="fortress">Fortress of Solitude</a>
         }
       </nav>
+      @if(currentPath.includes('blog-posts/')) {
+        <br/>
+        <a class="marg-5px" routerLink="blog-posts"> <---- Back to list </a>
+      }
     </div>
   </div>
-  <main class="scroll-container">
+  <main class="scroll-container flex-column">
     <router-outlet/>
   </main>
 
