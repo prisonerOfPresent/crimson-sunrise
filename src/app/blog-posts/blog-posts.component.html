@@ -1,10 +1,10 @@
-<h1 class="extra-light-font">My Posts</h1>
-<h5>Sometimes I may need to vent and ramble on for quite a while. So I thought I could pen these down and visit these
+<h1 class="light-font">My Posts</h1>
+<h5 class="extra-light-font">Sometimes I may need to vent and ramble on for quite a while. So I thought I could pen these down and visit these
   later, just to sit on these trains of thoughts.</h5>
 
 @if (posts && posts.length > 0) {
   @for (post of posts; track post.id) {
-    <h4 class="marg-10px">
+    <h4 class="marg-10px light-font">
       <div class="flex-row items-center">
         <a [routerLink]="'/blog-posts/'+post.id">
           {{ post.title }}
@@ -12,7 +12,7 @@
       </div>
       <div class="blog-post-row-container">
         @if (post.tagline.length > 0) {
-          <h6 class="text-center marg-5px">
+          <h6 class="text-center marg-5px light-font">
             {{ post.tagline }}
           </h6>
         }
@@ -24,18 +24,19 @@
 <!--          }-->
 <!--        }-->
         @if (loggedIn) {
-          <button (click)="deletePost(post.id)" class="marg-10px flex-row items-center tag-btn">
-            <span class="marg-5px">Delete</span>
-            <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
-          </button>
           <button (click)="editPost(post.id)" class="marg-10px flex-row items-center tag-btn">
             <span class="marg-5px">Edit</span>
             <img src="edit-icon.png" class="button-icon marg-5px" alt="Edit icon"/>
+          </button>
+          <span>&nbsp;&nbsp;</span>
+          <button (click)="deletePost(post.id)" class="marg-10px flex-row items-center tag-btn">
+            <span class="marg-5px">Delete</span>
+            <img src="delete-icon.png" class="button-icon marg-5px" alt="Delete icon"/>
           </button>
         }
       </div>
     </h4>
   }
 } @else {
-  <p>Nothing here :(. Come back again later!</p>
+  <p class="extra-light-font">Nothing here :(. Come back again later!</p>
 }
