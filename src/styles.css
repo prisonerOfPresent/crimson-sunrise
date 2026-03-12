@@ -85,6 +85,8 @@ nav {
   place-content: baseline;
   @media (width < 600px) {
     display: inline-flex;
+    text-wrap: auto;
+    flex-wrap: wrap;
   }
 }
 
